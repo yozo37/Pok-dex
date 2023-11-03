@@ -1,15 +1,18 @@
-// import React from 'react'
-// import Header from './composant/header.jsx';
-// import "./Footer.css";
-// export default function Monpokedex() {
+import React from 'react'
+import "./Footer.css";
+import Header from "../composant/header.jsx";
+import Footer from "./Footer.jsx";
+export default function Monpokedex() {
+    return (
+        <div className ="header">
+             <input type="button" class="button" value="Recherche"/>
+            <Header/>
+            <Footer/>
+            </div>
 
-//   return (
-//   <div>
-//     <Header/>
-//     <Footer/>
-// {/* <input type="button" class="button" value="Recherche"/> */}
+             
 
-//     </div>
     
-//   );
-// }
+  );
+}
+

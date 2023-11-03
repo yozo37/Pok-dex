@@ -1,7 +1,9 @@
 import React from 'react'
 
-export default function ListePokemon() {
-  return (
-    <div>ListePokemon</div>
-  );
-}
+const ListePokemon = () => (
+  <p>
+    home works!
+</p>
+)
+
+export default ListePokemon
