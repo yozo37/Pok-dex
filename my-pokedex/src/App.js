@@ -4,6 +4,7 @@ import Affichage from'./composant/affichage.jsx'
 function App() {
   return (
     <div className="App">
+      <header/>
     <Affichage/>
     </div>
   );

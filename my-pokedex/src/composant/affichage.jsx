@@ -1,14 +1,38 @@
 import React, { useEffect, useState } from 'react';
+//import Logo from '../composant/pokemon.png';
+import './header.jsx';
+// Créez une classe CSS pour la grille parent
+const gridContainerStyle = {
+  display: 'grid',
+  gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', // Vous pouvez ajuster la largeur des cartes ici
+  gap: '10px', // Espace entre les cartes
+  padding: '20px',
+};
+
+// Créez une classe CSS pour chaque carte de Pokémon
+const cardStyle = {
+  border: '1px solid #ccc',
+  padding: '10px',
+  borderRadius: '5px',
+  textAlign: 'center',
+};
+
+  const handleAddToCart = () => {
+   
+    
+  };
 
 function MyComponent() {
   const [pokemonData, setPokemonData] = useState([]);
-  const startIndex = 1; 
+  const startIndex = 1;
 
   useEffect(() => {
     const fetchPokemonData = async () => {
       const newPokemonData = [];
+
       for (let i = startIndex; i <= startIndex + 100; i++) {
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}/`);
+
         if (response.ok) {
           const data = await response.json();
           const name = data.name;
@@ -18,6 +42,7 @@ function MyComponent() {
           newPokemonData.push({ name, imageUrl, types });
         }
       }
+
       setPokemonData(newPokemonData);
     };
 
@@ -26,21 +51,18 @@ function MyComponent() {
 
   return (
     <div>
-        
-    <div>
-      <h1>Liste des Pokémons :</h1>
-      <ul>
+      <header/>
+      <div style={gridContainerStyle}>
         {pokemonData.map((pokemon, index) => (
-          <li key={index}>
+          <div key={index} style={cardStyle}>
             <h2>Nom : {pokemon.name}</h2>
             <img src={pokemon.imageUrl} alt={pokemon.name} />
             <p>Types : {pokemon.types.join(', ')}</p>
-          </li>
+            <button onClick={handleAddToCart}>Ajouter</button>
+    
+          </div>
         ))}
-      </ul>
-    </div>
-  );
-
+      </div>
     </div>
   );
 }
