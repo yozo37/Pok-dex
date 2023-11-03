@@ -1,6 +1,6 @@
 import React from 'react';
-import Logo from '../composant/pokemon.png';
-import './header.css';
+import Logo from './pokemon.png';
+// import './header.css';
 // import {Link, Routes,Route} from 'react-router-dom';
 // import ListePokemon from './ListePokemon';
 // import Monpokedex from './Monpokedex';

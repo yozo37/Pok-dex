@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Footer.css";
-import Header from "../composant/header.jsx";
+import Header from "./header.jsx";
 import Footer from "./Footer.jsx";
 export default function Monpokedex() {
     return (

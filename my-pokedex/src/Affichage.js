@@ -18,7 +18,7 @@ const cardStyle = {
 };
 
   const handleAddToCart = () => {
-   
+    // Ajoutez ici la logique pour ajouter ce Pokémon au panier
     
   };
 
@@ -51,7 +51,7 @@ function MyComponent() {
 
   return (
     <div>
-      <header/>
+      
       <div style={gridContainerStyle}>
         {pokemonData.map((pokemon, index) => (
           <div key={index} style={cardStyle}>
