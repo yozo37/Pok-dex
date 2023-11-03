@@ -1,35 +1,23 @@
+import React from 'react';
+import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
+import Affichage from './Affichage';
+import Monpokedex from './Monpokedex';
 
-// import logo from './logo.svg';
-// import './App.css';
-// import Affichage from './composant/affichage.jsx';
-import Header from './composant/header.jsx';
-import Footer from "./composant/Footer.jsx";
-
-
-import Affichage from'./composant/affichage.jsx'
-//import './App.css';
 
 
 function App() {
   return (
-    <div className="App">
+   <div>   
 
-      
-
-      <Header/>
-      <Affichage/>
-      <Footer/>
-
-
-    
+    <Link to="/">Accueil</Link>
+    <Link to="/Monpokedex">Pokedex</Link>
+    <Routes>
+        <Route  path="/" element={<Affichage/>} />
+        <Route path="/Monpokedex" element={<Monpokedex/>} />
+    </Routes>
     </div>
+   
   );
 }
-<div>
-  <div classame="button">
-  <input type="button" class="button1"/>
-  <input type="button" class="button2"/>
-  </div>
-</div>
 
 export default App;
