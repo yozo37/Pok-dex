@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-//import Logo from '../composant/pokemon.png';
-import './header.jsx';
-// Créez une classe CSS pour la grille parent
+
+import Header from './header.jsx';
+
+// Créez une classe CSS pour le conteneur de la grille
 const gridContainerStyle = {
   display: 'grid',
   gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', // Vous pouvez ajuster la largeur des cartes ici
@@ -17,15 +18,17 @@ const cardStyle = {
   textAlign: 'center',
 };
 
-  const handleAddToCart = () => {
-    // Ajoutez ici la logique pour ajouter ce Pokémon au panier
-    
-  };
+// Fonction pour gérer l'ajout d'un Pokémon au panier (actuellement vide)
+const handleAddToCart = () => {
+  // Vous pouvez ajouter ici la logique pour ajouter un Pokémon au panier
+};
 
 function MyComponent() {
+  // Utilisation de l'état local pour stocker les données des Pokémon
   const [pokemonData, setPokemonData] = useState([]);
   const startIndex = 1;
 
+  // Utilisation de useEffect pour effectuer des appels à l'API PokeAPI
   useEffect(() => {
     const fetchPokemonData = async () => {
       const newPokemonData = [];
@@ -39,19 +42,26 @@ function MyComponent() {
           const imageUrl = data.sprites.front_default;
           const types = data.types.map(typeObj => typeObj.type.name);
 
+          // Ajout des données du Pokémon au tableau newPokemonData
           newPokemonData.push({ name, imageUrl, types });
         }
       }
 
+      // Mise à jour de l'état local pokemonData avec les nouvelles données
       setPokemonData(newPokemonData);
     };
 
+    // Appel de la fonction fetchPokemonData lorsque le composant est monté ou lorsque startIndex change
     fetchPokemonData();
   }, [startIndex]);
 
+  // Rendu JSX du composant
   return (
     <div>
-      
+      {/* Inclusion du composant Header */}
+      <Header />
+
+      {/* Affichage des cartes Pokémon dans un conteneur de grille */}
       <div style={gridContainerStyle}>
         {pokemonData.map((pokemon, index) => (
           <div key={index} style={cardStyle}>
@@ -59,7 +69,6 @@ function MyComponent() {
             <img src={pokemon.imageUrl} alt={pokemon.name} />
             <p>Types : {pokemon.types.join(', ')}</p>
             <button onClick={handleAddToCart}>Ajouter</button>
-    
           </div>
         ))}
       </div>

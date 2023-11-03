@@ -1,0 +1,9 @@
+.Logo{
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: flex-start;
+}
+.header{
+  background-color: #68B684;
+}
