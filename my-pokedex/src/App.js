@@ -1,25 +1,27 @@
+
 // import logo from './logo.svg';
-import './App.css';
-// import Header from './composant/header.jsx';
-// import Footer from "./composant/Footer.jsx";
-import Monpokedex from './composant/Monpokedex.jsx';
-// import Affichage from'./composant/affichage.jsx';
-// import Monpokedex from './composant/Monpokedex.jsx';
-// import {Link, Routes, Route} from 'react-router-dom';
-// import ListePokemon from './composant/ListePokemon.jsx';
+// import './App.css';
+// import Affichage from './composant/affichage.jsx';
+import Header from './composant/header.jsx';
+import Footer from "./composant/Footer.jsx";
+
+
+import Affichage from'./composant/affichage.jsx'
+//import './App.css';
 
 
 function App() {
   return (
     <div className="App">
-      {/* <Link to="/ListePokemon"><h2>Liste de Pokemons</h2></Link>
-      <Link to="/Monpokedex"><h2>Pokedex</h2></Link>
-      <Routes>
-        <Route path="/ListePokemon" element={<ListePokemon />}/>
-        <Route path="/Monpokedex" element={<Monpokedex />}/>
-      </Routes> */}
-      <Monpokedex/>
 
+      
+
+      <Header/>
+      <Affichage/>
+      <Footer/>
+
+
+    
     </div>
   );
 }
